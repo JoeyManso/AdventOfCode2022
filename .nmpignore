@@ -1,0 +1,17 @@
+.gitignore
+.idea
+.nuget
+**/.gulp*
+**/gulp-tsc-tmp*
+gulpfile.*
+node_modules
+tests
+coverage
+documentation
+.npmignore
+test.js
+tsconfig.json
+bower.json
+dist
+_*
+typings

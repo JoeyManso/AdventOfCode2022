@@ -1,44 +1,23 @@
 import {Day, Part} from "./Day";
 
-class Elf {
-    public caloriesArray: number[] = [];
-
-    public GetCaloriesSum(): number {
-        let caloriesSum = 0;
-        for (const calories of this.caloriesArray) {
-            caloriesSum += calories;
-        }
-        return caloriesSum;
-    }
-}
-
 export class Day01 extends Day {
     public Run(_part: Part) {
-        const elves: Elf[] = [
-            new Elf(),
-        ];
-
         if (!this.calorieSums) {
+            this.calorieSums = [0];
             for (const inputLine of this.inputArray) {
                 const calories: number = Number.parseInt(inputLine);
                 if (isNaN(calories)) {
-                    elves.push(new Elf());
+                    this.calorieSums.push(0);
                 }
                 else {
-                    const elf: Elf = elves[elves.length - 1];
-                    elf.caloriesArray.push(calories);
+                    this.calorieSums[this.calorieSums.length - 1] += calories;
                 }
             }
-
-            this.calorieSums = [];
-            for (const elf of elves) {
-                this.calorieSums.push(elf.GetCaloriesSum());
-            }
-            this.calorieSums.sort((a, b) => a < b ? 1 : -1);
+            this.calorieSums.sort((a, b) => a > b ? -1 : 1);
         }
 
-        const sumCount = _part === Part.Part01 ? 1 : 3;
         let calorieSumsMax = 0;
+        const sumCount = _part === Part.Part01 ? 1 : 3;
         for (let i = 0; i < sumCount; ++i) {
             calorieSumsMax += this.calorieSums[i];
         }

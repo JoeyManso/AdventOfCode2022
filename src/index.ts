@@ -34,7 +34,7 @@ export module AdventOfCode
         }
         console.log(`------------ END "${dayType}" ------------ `)
     }
+    console.log(`------------------------ END ${dayTypes.length} Day(s) ------------------------ `)
     const elapsedTotal = new Date().getTime() - startTotal;
     console.log(`${elapsedTotal.toFixed(3)}ms\n`);
-    console.log(`------------------------ END ${dayTypes.length} Day(s) ------------------------ `)
 }

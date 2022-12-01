@@ -1,34 +1,52 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Day01 = void 0;
-var Day_1 = require("./Day");
-var Day01 = /** @class */ (function (_super) {
-    __extends(Day01, _super);
-    function Day01() {
-        return _super !== null && _super.apply(this, arguments) || this;
+const Day_1 = require("./Day");
+class Elf {
+    constructor() {
+        this.caloriesArray = [];
     }
-    Day01.prototype.Run = function (_part) {
-        if (_part === Day_1.Part.Part01) {
+    GetCaloriesSum() {
+        let caloriesSum = 0;
+        for (const calories of this.caloriesArray) {
+            caloriesSum += calories;
         }
-        else if (_part === Day_1.Part.Part02) {
+        return caloriesSum;
+    }
+}
+class Day01 extends Day_1.Day {
+    constructor() {
+        super(...arguments);
+        this.calorieSums = null;
+    }
+    Run(_part) {
+        const elves = [
+            new Elf(),
+        ];
+        if (!this.calorieSums) {
+            for (const inputLine of this.inputArray) {
+                const calories = Number.parseInt(inputLine);
+                if (isNaN(calories)) {
+                    elves.push(new Elf());
+                }
+                else {
+                    const elf = elves[elves.length - 1];
+                    elf.caloriesArray.push(calories);
+                }
+            }
+            this.calorieSums = [];
+            for (const elf of elves) {
+                this.calorieSums.push(elf.GetCaloriesSum());
+            }
+            this.calorieSums.sort((a, b) => a < b ? 1 : -1);
         }
-    };
-    return Day01;
-}(Day_1.Day));
+        const sumCount = _part === Day_1.Part.Part01 ? 1 : 3;
+        let calorieSumsMax = 0;
+        for (let i = 0; i < sumCount; ++i) {
+            calorieSumsMax += this.calorieSums[i];
+        }
+        console.log(`Most Calories Sum: ${calorieSumsMax}`);
+    }
+}
 exports.Day01 = Day01;
 //# sourceMappingURL=Day01.js.map

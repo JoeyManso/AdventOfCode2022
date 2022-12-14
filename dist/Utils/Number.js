@@ -61,17 +61,17 @@ function Clamp(val, min, max) {
 }
 exports.Clamp = Clamp;
 /**
- * Returns true if _x is within the min/max range (inclusive)
+ * Returns true if _value is within the min/max range (inclusive)
  */
-function IsWithin(_x, _min, _max) {
-    return _x > _min && _x < _max;
+function IsWithin(_value, _min, _max) {
+    return _value > _min && _value < _max;
 }
 exports.IsWithin = IsWithin;
 /**
- * Returns true if _x is within the min/max range (inclusive)
+ * Returns true if _value is within the min/max range (inclusive)
  */
-function IsWithinInclusive(_x, _min, _max) {
-    return _x >= _min && _x <= _max;
+function IsWithinInclusive(_value, _min, _max) {
+    return _value >= _min && _value <= _max;
 }
 exports.IsWithinInclusive = IsWithinInclusive;
 //# sourceMappingURL=Number.js.map

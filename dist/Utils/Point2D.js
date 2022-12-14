@@ -12,6 +12,12 @@ class Point2D {
     get Y() {
         return this.y;
     }
+    set X(_x) {
+        this.x = _x;
+    }
+    set Y(_y) {
+        this.y = _y;
+    }
     Add(_vector) {
         this.x += _vector.X;
         this.y += _vector.Y;

@@ -58,15 +58,15 @@ export function Clamp(val: number, min: number, max: number): number {
 }
 
 /**
- * Returns true if _x is within the min/max range (inclusive)
+ * Returns true if _value is within the min/max range (inclusive)
  */
-export function IsWithin(_x: number, _min: number, _max: number): boolean {
-	return _x > _min && _x < _max;
+export function IsWithin(_value: number, _min: number, _max: number): boolean {
+	return _value > _min && _value < _max;
 }
 
 /**
- * Returns true if _x is within the min/max range (inclusive)
+ * Returns true if _value is within the min/max range (inclusive)
  */
-export function IsWithinInclusive(_x: number, _min: number, _max: number): boolean {
-	return _x >= _min && _x <= _max;
+export function IsWithinInclusive(_value: number, _min: number, _max: number): boolean {
+	return _value >= _min && _value <= _max;
 }

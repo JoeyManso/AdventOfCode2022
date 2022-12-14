@@ -29,10 +29,10 @@ export declare function MustParseNumber(val: any): number;
  */
 export declare function Clamp(val: number, min: number, max: number): number;
 /**
- * Returns true if _x is within the min/max range (inclusive)
+ * Returns true if _value is within the min/max range (inclusive)
  */
-export declare function IsWithin(_x: number, _min: number, _max: number): boolean;
+export declare function IsWithin(_value: number, _min: number, _max: number): boolean;
 /**
- * Returns true if _x is within the min/max range (inclusive)
+ * Returns true if _value is within the min/max range (inclusive)
  */
-export declare function IsWithinInclusive(_x: number, _min: number, _max: number): boolean;
+export declare function IsWithinInclusive(_value: number, _min: number, _max: number): boolean;

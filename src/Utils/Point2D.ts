@@ -13,6 +13,14 @@ export class Point2D {
         return this.y;
     }
 
+    set X(_x: number) {
+        this.x = _x;
+    }
+
+    set Y(_y: number) {
+        this.y = _y;
+    }
+
     Add(_vector: Vector2D): this {
         this.x += _vector.X;
         this.y += _vector.Y;

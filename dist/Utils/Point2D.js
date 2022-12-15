@@ -34,6 +34,9 @@ class Point2D {
     ToString() {
         return `(${this.X},${this.Y})`;
     }
+    static GetManhattanDist(_p1, _p2) {
+        return Math.abs(_p1.X - _p2.X) + Math.abs(_p1.Y - _p2.Y);
+    }
     static Copy(_point) {
         return new Point2D(_point.X, _point.Y);
     }

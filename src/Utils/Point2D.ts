@@ -41,6 +41,10 @@ export class Point2D {
         return `(${this.X},${this.Y})`;
     }
 
+    static GetManhattanDist(_p1: Point2D, _p2: Point2D): number {
+        return Math.abs(_p1.X - _p2.X) + Math.abs(_p1.Y - _p2.Y);
+    }
+
     static Copy(_point: Point2D): Point2D {
         return new Point2D(_point.X, _point.Y);
     }
